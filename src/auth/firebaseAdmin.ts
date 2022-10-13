@@ -1,9 +1,9 @@
 import * as admin from "firebase-admin";
 import { NextApiRequest } from "next";
 
-const verifyIdToken = (token: string) => {
+const verifyIdToken = async(token: string) => {
   const firebasePrivateKey: string = process.env.FIREBASE_PRIVATE_KEY ?? "";
-
+  console.log(firebasePrivateKey.replace(/\\n/g, "\n"))
   if (!admin.apps.length) {
     admin.initializeApp({
       credential: admin.credential.cert({
