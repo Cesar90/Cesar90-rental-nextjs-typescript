@@ -13,13 +13,19 @@ interface IProps {
   highlightedId: string | null;
 }
 
+interface IReactMapGLDragging{
+  isDragging: boolean
+}
+
 export default function Map({ setDataBounds, houses, highlightedId }: IProps) {
   const [selected, setSelected] = useState<HousesQuery_houses | null>(null);
   const mapRef = useRef<ReactMapGL | null>(null);
   const [viewport, setViewport] = useLocalState<ViewState>("viewport", {
-    latitude: 43,
-    longitude: -79,
-    zoom: 10,
+    // latitude: 43,
+    // longitude: -79,
+    latitude: 12.108287,
+    longitude: -86.304828,
+    zoom: 10
   });
 
   return (
@@ -29,7 +35,7 @@ export default function Map({ setDataBounds, houses, highlightedId }: IProps) {
         width="100%"
         height="calc(100vh - 64px)"
         mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
-        onViewportChange={(nextViewport) => setViewport(nextViewport)}
+        onViewportChange={(nextViewport: ViewState) => setViewport(nextViewport)}
         ref={(instance) => (mapRef.current = instance)}
         minZoom={5}
         maxZoom={15}
@@ -40,7 +46,7 @@ export default function Map({ setDataBounds, houses, highlightedId }: IProps) {
             setDataBounds(JSON.stringify(bounds.toArray()));
           }
         }}
-        onInteractionStateChange={(extra) => {
+        onInteractionStateChange={(extra: IReactMapGLDragging) => {
           if (!extra.isDragging && mapRef.current) {
             const bounds = mapRef.current.getMap().getBounds();
             setDataBounds(JSON.stringify(bounds.toArray()));
