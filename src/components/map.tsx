@@ -46,7 +46,7 @@ export default function Map({ setDataBounds, houses, highlightedId }: IProps) {
             setDataBounds(JSON.stringify(bounds.toArray()));
           }
         }}
-        onInteractionStateChange={(extra: IReactMapGLDragging) => {
+        onInteractionStateChange={(extra) => {
           if (!extra.isDragging && mapRef.current) {
             const bounds = mapRef.current.getMap().getBounds();
             setDataBounds(JSON.stringify(bounds.toArray()));
