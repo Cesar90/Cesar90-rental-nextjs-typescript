@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.2.5",
-    "@prisma/client": "^2.20.1",
+    "@prisma/client": "~2.11.0",
     "@reach/combobox": "^0.11.2",
     "apollo-server-micro": "^2.19.0",
     "autoprefixer": "^10.0.2",
@@ -30,7 +30,7 @@
     "geolib": "^3.3.1",
     "graphql": "^15.4.0",
     "js-cookie": "^2.2.1",
-    "next": "10.0.1",
+    "next": "10.0.6",
     "postcss": "^8.1.7",
     "postcss-import": "^14.0.0",
     "react": "17.0.1",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@prisma/cli": "~2.11.0",
     "@types/cookie": "^0.4.0",
     "@types/js-cookie": "^2.2.6",
     "@types/react": "^16.9.56",
