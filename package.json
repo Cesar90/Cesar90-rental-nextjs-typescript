@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.2.5",
-    "@prisma/client": "^2.22.0-dev.48",
+    "@prisma/client": "^2.22.0",
     "@reach/combobox": "^0.11.2",
     "apollo-server-micro": "^2.19.0",
     "autoprefixer": "^10.0.2",
